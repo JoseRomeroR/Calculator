@@ -93,8 +93,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             solutionTv.setText(resultTV.getText());
             return;
         }
-        if (buttonText.equals("C")){
-            dataToCalculate = dataToCalculate.substring(0,dataToCalculate.length()-1);
+        if (buttonText.equals("C")){            
+             if (solutionTv.length()==1 || resultTV.length()==1){
+                solutionTv.setText("");
+                resultTV.setText("0");
+                return;
+            }else{
+                dataToCalculate = dataToCalculate.substring(0,dataToCalculate.length()-1);
+            }
+            
         }else{
             dataToCalculate+= buttonText;
         }
